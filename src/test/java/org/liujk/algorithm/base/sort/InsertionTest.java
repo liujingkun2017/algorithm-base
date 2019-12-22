@@ -2,17 +2,15 @@ package org.liujk.algorithm.base.sort;
 
 import org.junit.Test;
 
-public class BubbleTest {
+public class InsertionTest {
 
     @Test
-   public void sortTest(){
-
+    public void sortTest(){
         int[] array = {72,24,5,7,34,3,54,2};
-        Bubble bubble = new Bubble();
-        int[] res = bubble.sort(array);
+        Insertion insertion = new Insertion();
+        int[] res = insertion.sort(array);
         for (int item:res) {
             System.out.println(item);
         }
-   }
-
+    }
 }

@@ -1,13 +1,13 @@
 package org.liujk.algorithm.base.sort;
 
 /**
- * 冒泡排序
+ * 插入排序
  * 时间复杂度：n2
  * 空间复杂度：1
  * 原地排序算法
  * 稳定排序算法
  */
-public class Bubble {
+public class Insertion {
 
     /**
      * 排序逻辑
@@ -21,14 +21,17 @@ public class Bubble {
             return array;
         }
 
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length - i - 1; j++) {
-                if (array[j] > array[j + 1]) {
-                    int temp = array[j + 1];
+        for (int i = 1; i < array.length; i++) {
+            int value = array[i];
+            int j = i - 1;
+            for (; j >= 0; j--) {
+                if (array[j] > value) {
                     array[j + 1] = array[j];
-                    array[j] = temp;
+                } else {
+                    break;
                 }
             }
+            array[j + 1] = value;
         }
         return array;
     }
